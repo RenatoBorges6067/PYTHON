@@ -1,0 +1,30 @@
+print('=============== LOCADORA DE CARROS DO RENATO ==================')
+print('====================  TIPOS DE CARROS  ======================')
+print('=== 1 para CARROS:')
+print('=== 2 para CAMINHONETES:')
+print('=== 3 para UTILITARIOS:')
+print('=== 4 para VANS:')
+print('=== QUALQUER OUTRO VALOR PARA ENCERRAR O PROGRAMA:')
+c = int(input('QUAL MODELO VOCÊ DESEJA ALUGAR '))
+ 
+match c:
+    case 1:
+        print('TEMOS ESSES MODELOS DE CARRO')
+        print('1 para HACTH:')
+        print('2 para HACTH ESPORTIVO:')
+        print('3 para SEDAN:')
+        print('4 para ENCERRAR PROGRAMA:')
+        ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
+        match ch:
+                case 1: 
+                    print('TEMOS ESSES MODELOS DISPONIVEIS:')
+                    print('1 para POLO 2020:')
+                    print('2 para PRISMA 2019:')
+                    
+                    print('3 para FORD KA 2021:')
+                    print('4 para ENCERRAR PROGRAMA')
+                    match ch:
+                            case 1:
+                                
+                        
+            
