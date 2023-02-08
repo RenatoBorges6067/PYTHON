@@ -1,44 +1,232 @@
-print('=============== LOCADORA DE CARROS DO RENATO ==================')
-print('====================  TIPOS DE CARROS  ======================')
-print('=== 1 para CARROS:')
-print('=== 2 para CAMINHONETES:')
-print('=== 3 para UTILITARIOS:')
-print('=== 4 para VANS:')
-print('=== QUALQUER OUTRO VALOR PARA ENCERRAR O PROGRAMA:')
-c = int(input('QUAL MODELO VOCÊ DESEJA ALUGAR '))
+import time
+f = 0
+km = 0
+print('===============================================================')
+print('=               LOCADORA DE CARROS DO RENATO                 ==')
+print('====================  TIPOS DE CARROS  ========================')
 
-print("="*20)
- 
+print('== [1] para CARROS:                                          ==')
+print('== [2] para CAMINHONETES:                                    ==')
+print('== [3] para UTILITARIOS:                                     ==')
+print('== [4] para VANS:                                            ==')
+print('== QUALQUER OUTRO VALOR PARA ENCERRAR O PROGRAMA:            ==')
+print('===============================================================')
+c = int(input('QUAL TIPO DE CARRO VOCÊ DESEJA ALUGAR '))
+print('')
+print('BUSCANDO MODELOS DISPONIVEIS....')
+time.sleep(3)
+print('')
+print('')
 match c:
     case 1:
-        print('TEMOS ESSES MODELOS DE CARRO')
-        print('1 para HACTH:')
-        print('2 para HACTH ESPORTIVO:')
-        print('3 para SEDAN:')
-        print('4 para ENCERRAR PROGRAMA:')
+        print('=====================================================')
+        print('==        TEMOS ESSES MODELOS DE CARRO             ==')
+        print('==[1] para HATCH:                                  ==')
+        print('==[2] para HATCH ESPORTIVO:                        ==')
+        print('==[3] para SEDAN:                                  ==')
+        print('==[4] para ENCERRAR PROGRAMA:                      ==')
+        print('=====================================================')
         ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
 
-        print('='*20)
-        match ch:
-                case 1: 
-                    print('TEMOS ESSES MODELOS DISPONIVEIS:')
-                    print('1 para POLO 2020:')
-                    print('2 para PRISMA 2019:')
-                    print('3 para FORD KA 2021:')
-                    print('4 para ENCERRAR PROGRAMA')
-                    cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DISPONIVEIS'))
-                    match cp:
+        print('')
+
+        if ch == 1 or ch == 2 or ch == 3:
+            print('')
+            match ch:
+                case 1:
+
+                    print('\033[0:32m========================================================')
+                    print('==     VALORES DOS CONTRATO PARA CARROS HATCH         ==')
+                    print('== ALUGUEL POR KM RODADO:          R$ 1,50 POR KM     ==')
+                    print('== ALUGUEL MENSAL COM KM LIVRE:    R$ 225,00 POR MES  ==')
+                    print('== ALUGUEL POR KM ILIMITADO        R$ 500,00          ==')
+                    print('========================================================\033[m')
+                    print('BUSCANDO CARROS DISPONIVEIS.................')
+                    time.sleep(3)
+                    print('==     TEMOS ESSES MODELOS DE HATCH DISPONIVEIS:      ==')
+                    print('==[1] para POLO 2020:                                 ==')
+                    print('==[2] para PRISMA 2019:                               ==')
+                    print('==[3] para FORD KA 2021:                              ==')
+                    print('==[4] para ENCERRAR PROGRAMA                          ==')
+                    print('========================================================')
+                    cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE HATCH DISPONIVEIS'))
+                    if cp == 1 or cp == 2 or cp == 3:
+                        km = 1.50
+                        f = 1
+                        match cp:
                             case 1:
                                 print('VOCE ESCOLHEU O MODELO POLO 2020:')
+                                print('')
 
                             case 2:
                                 print('VOCE ESCOLHEU O MODELO PRISMA 2019:')
+                                print('')
 
-                            case 3: 
-                                print('VOCE ESCOLHEU O MODELO FORD KA:')
-                            
-                            case 4:
-                                print('VOCE ESCOLEHU ENCERRAR O PROGRAMA')
-                case 2: 
-                    print()
-                            
+                            case 3:
+                                print('VOCE ESCOLHEU O MODELO FORD KA 2020:')
+                                print('')
+
+
+                    elif cp == 4:
+                        print('')
+                        f = 10
+                        print('ALUGUEL CANCELADO!!!!!!!!!!')
+                    else:
+                        print('')
+                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+                case 2:
+                    print('\033[0:32m========================================================')
+                    print('==  VALORES DOS CONTRATO PARA CARROS HATCH ESPORTIVO  ==')
+                    print('== ALUGUEL POR KM RODADO:          R$ 2,00 POR KM     ==')
+                    print('== ALUGUEL MENSAL COM KM LIVRE:    R$ 300,00 POR MES  ==')
+                    print('== ALUGUEL POR KM ILIMITADO        R$ 660,00          ==')
+                    print('========================================================\033[m')
+                    print('BUSCANDO CARROS DISPONIVEIS.................')
+                    time.sleep(3)
+                    print('== TEMOS ESSES MODELOS DE HATCH ESPORTIVO DISPONIVEIS:==')
+                    print('==[1] para FORD FOCUS 2021:                           ==')
+                    print('==[2] para HYUNDAY I30 2020:                          ==')
+                    print('==[3] para CHEVROLET CRUZE SPORT 6 2019:              ==')
+                    print('==[4] para ENCERRAR PROGRAMA:                         ==')
+                    print('========================================================')
+                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE HATCH ESPORTIVO DISPONIVEIS '))
+
+                    if cp == 1 or cp == 2 or cp == 3:
+                        km = 2
+                        f = 1
+                        match cp:
+                            case 1:
+                                print('VOCE ESCOLHEU O MODELO FORD FOCUS 2021:')
+                                print('')
+
+                            case 2:
+                                print('VOCE ESCOLHEU O MODELO HYUNDAY I30 2020:')
+                                print('')
+
+                            case 3:
+                                print('')
+                                print('VOCE ESCOLHEU O MODELO CHEVROLET CRUZE SPORT 6 2019:')
+
+
+                    elif cp == 4:
+                        print('')
+                        f = 10
+                        print('ALUGUEL CANCELADO!!!!!!!!!!')
+                    else:
+                        print('')
+                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+                case 3:
+                    print('\033[0:32m========================================================')
+                    print('==     VALORES DOS CONTRATO PARA CARROS SEDANS        ==')
+                    print('== ALUGUEL POR KM RODADO:          R$ 2,50 POR KM     ==')
+                    print('== ALUGUEL MENSAL COM KM LIVRE:    R$ 375,00 POR MES  ==')
+                    print('== ALUGUEL POR KM ILIMITADO        R$ 832,50,00       ==')
+                    print('========================================================\033[m')
+                    print('BUSCANDO CARROS DISPONIVEIS.................')
+                    time.sleep(3)
+                    print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:    ==')
+                    print('==[1] para HONDA CIVIC 2022:                          ==')
+                    print('==[2] para BMW 220I 2019:                             ==')
+                    print('==[3] para TOYOTA COROLLA 2022:                       ==')
+                    print('==[4] para ENCERRAR O PROGRAMA:                       ==')
+                    print('========================================================')
+                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SEDANS DISPONIVEIS:'))
+                    if cp == 1 or cp == 2 or cp == 3:
+                        km = 2.50
+                        f = 1
+                        match cp:
+                            case 1:
+                                print('')
+                                print('VOCE ESCOLHEU O MODELO HONDA CIVIC 2022: ')
+
+                            case 2:
+                                print('')
+                                print('VOCE ESCOLHEU O MODELO BMW 220I 2019:')
+
+                            case 3:
+                                print('')
+                                print('VOCE ESCOLHEU O MODELO TOYOTA COROLLA 2022:')
+
+
+                    elif cp == 4:
+                        f = 10
+                        print('')
+                        print('ALUGUEL CANCELADO!!!!!!!!!!')
+
+                    else:
+                        print('')
+                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+        elif ch == 4:
+            print('')
+            print('ALUGUEL CANCELADO!!!!!!!!!!')
+
+        else:
+            print('')
+            print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+print(' ')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if f == 10:
+    print('=' * 30)
+    print('')
+elif f == 1:
+    print('CARREGANDO CONTRATOS.......')
+    time.sleep(4)
+    print('=' * 30)
+    print('')
+    print('=========================================================')
+    print('========== ESCOLHA UM DOS CONTRATOS DE ALUGUEL ==========')
+    print('==                                                     ==')
+    print('== [1] CONTRATO ALUGUEL POR KM RODADO                  ==')
+    print('== [2] CONTRATO ALUGUEL MENSAL COM KM LIVRE            ==')
+    print('== [3] CONTRATO ALUGUEL POR KM ILIMITADO               ==')
+    print('== [4] PARA CANCELAR O ALUGUEL                         ==')
+    print('=========================================================')
+    contrato = int(input('QUAL DOS CONTRATOS VOCE VAI CONTRATAR?'))
+    if contrato == 1 or contrato == 2 or contrato == 3:
+        match contrato:
+            case 1:
+                print('VOCE ESCOLHEU A OPÇAO DE CONTRATO POR KM RODADO! VOCE TERÁ QUE PAGAR R${} POR KM RODADO'.format(km))
+
+            case 2:
+                m = int(input('QUANTOS MESES VAI FICAR COM O CARRO ?'))
+                t = m * 150
+                print('')
+                print('VOCE ESCOLHEU ALUGUEL MENSAL! O VALOR É R${} POR MES'.format(km*150))
+                print('O VALOR TOTAL A PAGAR VAI SER DE R${} POR {} MES(es)'.format(t, m))
+
+            case 3:
+                print('')
+                print('VOCE ESCOLHEU ALUGUEL POR KM ILIMITADO! O VALOR É DE R${:.2f}'.format(km*333))
+
+            case 4:
+                print('ALUGUEL CANCELADO!!!!!!!')
+    elif contrato == 4:
+        print('ALUGUEL CANCELADO!!!!!!!!!!')
+
+    else:
+        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
