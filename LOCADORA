@@ -1,4 +1,5 @@
 import time
+
 f = 0
 km = 0
 s = 0
@@ -6,532 +7,579 @@ vlc = 0
 tot = 0
 t = 0
 nc = str()
+mes = 0
 print('===============================================================')
 print('=               LOCADORA DE CARROS DO RENATO                 ==')
 print('====================  TIPOS DE CARROS  ========================')
 
 print('== [1] para CARROS:                                          ==')
 print('== [2] para PICAPES:                                         ==')
-print('== [3] para UTILITARIOS:                                     ==')
+print('== [3] para SUVS:                                            ==')
 print('== [4] para VANS:                                            ==')
 print('== QUALQUER OUTRO VALOR PARA ENCERRAR O PROGRAMA:            ==')
 print('===============================================================')
 c = int(input('QUAL TIPO DE CARRO VOCÊ DESEJA ALUGAR '))
 print('')
-print('BUSCANDO MODELOS DISPONIVEIS....')
-time.sleep(3)
-print('')
-print('')
-match c:
-    case 1:
-        print('=====================================================')
-        print('==        TEMOS ESSES MODELOS DE CARRO             ==')
-        print('==[1] para HATCH:                                  ==')
-        print('==[2] para HATCH ESPORTIVO:                        ==')
-        print('==[3] para SEDAN:                                  ==')
-        print('==[4] para ENCERRAR PROGRAMA:                      ==')
-        print('=====================================================')
-        ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
 
-        print('')
+if c == 1 or c == 2 or c == 3 or c == 4:
+    print('BUSCANDO MODELOS DISPONIVEIS....')
+    time.sleep(3)
+    print('')
+    print('')
+    match c:
+        case 1:
+            print('=====================================================')
+            print('==        TEMOS ESSES MODELOS DE CARRO             ==')
+            print('==[1] para HATCH:                                  ==')
+            print('==[2] para HATCH ESPORTIVO:                        ==')
+            print('==[3] para SEDAN:                                  ==')
+            print('==[4] para ENCERRAR PROGRAMA:                      ==')
+            print('=====================================================')
+            ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
 
-        if ch == 1 or ch == 2 or ch == 3:
             print('')
-            match ch:
-                case 1:
 
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA CARROS HATCH         ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 2,00 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.000,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 2.000,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==     TEMOS ESSES MODELOS DE HATCH DISPONIVEIS:      ==')
-                    print('==[1] para POLO 2020:         R$ 64.000,00            ==')
-                    print('==[2] para PRISMA 2019:       R$ 68.000,00            ==')
-                    print('==[3] para FORD KA 2021:      R$ 56.000,00            ==')
-                    print('==[4] para ENCERRAR PROGRAMA                          ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE HATCH DISPONIVEIS:'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 2.00
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 64000
-                                nc = 'POLO 2020'
-                                print('VOCE ESCOLHEU O MODELO POLO 2020:')
-                                print('')
+            if ch == 1 or ch == 2 or ch == 3:
+                print('')
+                match ch:
+                    case 1:
 
-                            case 2: 
-                                vlc = 68000
-                                nc = ('PRISMA 2019')
-                                print('VOCE ESCOLHEU O MODELO PRISMA 2019:')
-                                print('')
-
-                            case 3:
-                                vlc = 56000
-                                nc = ('FORD KA 2020')
-                                print('VOCE ESCOLHEU O MODELO FORD KA 2020:')
-                                print('')
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA CARROS HATCH         ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 2,00 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.000,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 2.000,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO HATCHS DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==     TEMOS ESSES MODELOS DE HATCH DISPONIVEIS:      ==')
+                        print('==[1] para POLO 2020:         R$ 64.000,00            ==')
+                        print('==[2] para PRISMA 2019:       R$ 68.000,00            ==')
+                        print('==[3] para FORD KA 2021:      R$ 56.000,00            ==')
+                        print('==[4] para ENCERRAR PROGRAMA                          ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE HATCH DISPONIVEIS:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 2.00
+                            f = 1
 
 
-                    elif cp == 4:
-                        print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-                case 2:
-                    print('\033[0:32m========================================================')
-                    print('==  VALORES DOS CONTRATO PARA CARROS HATCH ESPORTIVO  ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 2,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.250,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 2.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('== TEMOS ESSES MODELOS DE HATCH ESPORTIVO DISPONIVEIS:==')
-                    print('==[1] para FORD FOCUS 2022:            R$115.649,00   ==')
-                    print('==[2] para HONDA CIVIC SI 2020:        R$179.900,00   ==')
-                    print('==[3] para VOLKSWAGEN GOLF GTI 2019:   R$137.249,00   ==')
-                    print('==[4] para ENCERRAR PROGRAMA:                         ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE HATCH ESPORTIVO DISPONIVEIS:'))
+                            match cp:
 
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 2.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 115649
-                                nc = ('FORD FOCUS 2022')
-                                print('VOCE ESCOLHEU O MODELO FORD FOCUS 2022:')
-                                print('')
+                                case 1:
+                                    vlc = 64000
+                                    nc = 'POLO 2020'
+                                    print('VOCE ESCOLHEU O MODELO POLO 2020:')
+                                    print('')
 
-                            case 2:
-                                vlc = 179900
-                                nc = ('HONDA CIVIC SI 2020')
-                                print('VOCE ESCOLHEU O MODELO HONDA CIVIC SI 2020:')
-                                print('')
+                                case 2:
+                                    vlc = 68000
+                                    nc = ('PRISMA 2019')
+                                    print('VOCE ESCOLHEU O MODELO PRISMA 2019:')
+                                    print('')
 
-                            case 3:
-                                vlc = 137249
-                                nc = ('VOLKSWAGEN GOLF GTI 2019')
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO VOLKSWAGEN GOLF GTI 2019:')
+                                case 3:
+                                    vlc = 56000
+                                    nc = ('FORD KA 2020')
+                                    print('VOCE ESCOLHEU O MODELO FORD KA 2020:')
+                                    print('')
 
 
-                    elif cp == 4:
-                        print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
 
-                case 3:
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA CARROS SEDANS        ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 3,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.750,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 3.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:    ==')
-                    print('==[1] para HONDA CIVIC 2022:       R$182.901,00       ==')
-                    print('==[2] para BMW 220I 2019:          R$239.950,00       ==')
-                    print('==[3] para MERCEDES C180 2020:     R$209.049,00       ==')
-                    print('==[4] para ENCERRAR O PROGRAMA:                       ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SEDANS DISPONIVEIS:'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 3.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 182901
-                                nc = 'HONDA CIVIC 2022'
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO HONDA CIVIC 2022: ')
-
-                            case 2:
-                                vlc = 239950
-                                nc = 'BMW 220I 2019'
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO BMW 220I 2019:')
-
-                            case 3:
-                                vlc = 209049
-                                nc = 'MERCEDEZ C180 2020'
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO MERCEDEZ C180 2020:')
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
 
 
-                    elif cp == 4:
-                        f = 10
-                        print('')
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
+                    case 2:
+                        print('\033[0:32m========================================================')
+                        print('==  VALORES DOS CONTRATO PARA CARROS HATCH ESPORTIVO  ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 2,50 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.250,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 2.500,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO HACTHS DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('== TEMOS ESSES MODELOS DE HATCH ESPORTIVO DISPONIVEIS:==')
+                        print('==[1] para FORD FOCUS 2022:            R$115.649,00   ==')
+                        print('==[2] para HONDA CIVIC SI 2020:        R$179.900,00   ==')
+                        print('==[3] para VOLKSWAGEN GOLF GTI 2019:   R$137.249,00   ==')
+                        print('==[4] para ENCERRAR PROGRAMA:                         ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE HATCH ESPORTIVO DISPONIVEIS:'))
 
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 2.50
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 115649
+                                    nc = ('FORD FOCUS 2022')
+                                    print('VOCE ESCOLHEU O MODELO FORD FOCUS 2022:')
+                                    print('')
 
-        elif ch == 4:
+                                case 2:
+                                    vlc = 179900
+                                    nc = ('HONDA CIVIC SI 2020')
+                                    print('VOCE ESCOLHEU O MODELO HONDA CIVIC SI 2020:')
+                                    print('')
+
+                                case 3:
+                                    vlc = 137249
+                                    nc = ('VOLKSWAGEN GOLF GTI 2019')
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO VOLKSWAGEN GOLF GTI 2019:')
+
+
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+                    case 3:
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA CARROS SEDANS        ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 3,50 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.750,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 3.500,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO SEDANS DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:    ==')
+                        print('==[1] para HONDA CIVIC 2022:       R$182.901,00       ==')
+                        print('==[2] para BMW 220I 2019:          R$239.950,00       ==')
+                        print('==[3] para MERCEDES C180 2020:     R$209.049,00       ==')
+                        print('==[4] para ENCERRAR O PROGRAMA:                       ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SEDANS DISPONIVEIS:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 3.50
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 182901
+                                    nc = 'HONDA CIVIC 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO HONDA CIVIC 2022: ')
+
+                                case 2:
+                                    vlc = 239950
+                                    nc = 'BMW 220I 2019'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO BMW 220I 2019:')
+
+                                case 3:
+                                    vlc = 209049
+                                    nc = 'MERCEDEZ C180 2020'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO MERCEDEZ C180 2020:')
+
+
+                        elif cp == 4:
+                            f = 10
+                            print('')
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+            elif ch == 4:
+                print('')
+                print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+            else:
+                print('')
+                print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+        case 2:
+            print('=====================================================')
+            print('==        TEMOS ESSES MODELOS DE PICAPE            ==')
+            print('==[1] para COMPACTA:                               ==')
+            print('==[2] para MÉDIA:                                  ==')
+            print('==[3] para GRANDE:                                 ==')
+            print('==[4] para ENCERRAR PROGRAMA:                      ==')
+            print('=====================================================')
+            ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
+
             print('')
-            print('ALUGUEL CANCELADO!!!!!!!!!!')
 
-        else:
+            if ch == 1 or ch == 2 or ch == 3:
+                print('')
+                match ch:
+                    case 1:
+                        print('\033[0:32m========================================================')
+                        print('==   VALORES DOS CONTRATO PARA PICAPES COMPACTAS      ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 2,50 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.250,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 2.500,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO PICAPES DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==TEMOS ESSES MODELOS DE PICAPES COMPACTAS DISPONIVEIS==')
+                        print('==[1] para FIAT TORO 2018:           R$120.544,00     ==')
+                        print('==[2] para VOLKSWAGEN SAVEIRO 2022:  R$105.009,00     ==')
+                        print('==[3] para CHEVROLET MONTANNA 2021:  R$78.771,00      ==')
+                        print('==[4] para ENCERRAR PROGRAMA                          ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE PICAPES COMPACTAS DISPONIVEIS'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 2.50
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 120544
+                                    nc = 'FIAT TORO 2018'
+                                    print('VOCE ESCOLHEU O MODELO FIAT TORO 2018:')
+                                    print('')
+
+                                case 2:
+                                    vlc = 105009
+                                    nc = 'VOLKSWAGEN SAVEIRO 2022'
+                                    print('VOCE ESCOLHEU O MODELO VOLKSWAGEN SAVEIRO 2022:')
+                                    print('')
+
+                                case 3:
+                                    vlc = 78771
+                                    nc = 'CHEVROLET MONTANNA 2021'
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET MONTANNA 2021:')
+                                    print('')
+
+
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+                    case 2:
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA PICAPES MÉDIAS       ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 4,50 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 2.250,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 4.500,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO PICAPES DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('== TEMOS ESSES MODELOS DE PICAPES MÉDIAS DISPONIVEIS: ==')
+                        print('==[1] para TOYOTA HILLUX 2021:       R$260.151,00     ==')
+                        print('==[2] para VOLKSWAGEN AMAROK 2020:   R$225.412,00     ==')
+                        print('==[3] para CHEVROLET S10 2022:       R$255.165,00     ==')
+                        print('==[4] para ENCERRAR PROGRAMA:                         ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE PICAPES MÉDIAS DISPONIVEIS '))
+
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 4.50
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 260151
+                                    nc = 'TOYOTA HILLUX 2021'
+                                    print('VOCE ESCOLHEU O MODELO TOYOTA HILLUX 2021:')
+                                    print('')
+
+                                case 2:
+                                    vlc = 225412
+                                    nc = 'VOLKSWAGEN AMAROK 2020'
+                                    print('VOCE ESCOLHEU O MODELO VOLKSWAGEN AMAROK 2020:')
+                                    print('')
+
+                                case 3:
+                                    vlc = 255165
+                                    nc = 'CHEVROLET S10 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET S10 2022:')
+
+
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+                    case 3:
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA PICAPES GRANDES      ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 6,00 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 3.000,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 6.000,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO PICAPES DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==TEMOS ESSES MODELOS DE PICAPES GRANDES DISPONIVEIS: ==')
+                        print('==[1] para DODGE RAM 2500 2022:       R$469.784,00    ==')
+                        print('==[2] para CHEVROLET SILVERADO 2022:  R$545.766,00    ==')
+                        print('==[3] para FORD F-150 2022:           R$440.000,00    ==')
+                        print('==[4] para ENCERRAR O PROGRAMA:                       ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE PICAPES GRANDES DISPONIVEIS:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 6
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 469784
+                                    nc = 'DODGE RAM 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO DODGE RAM 2022: ')
+
+                                case 2:
+                                    vlc = 545766
+                                    nc = 'CHEVROLET SILVERADO 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET SILVERADO 2022:')
+
+                                case 3:
+                                    vlc = 440000
+                                    nc = 'FORD F-150 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO FORD F-150 2022:')
+
+
+                        elif cp == 4:
+                            f = 10
+                            print('')
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+            elif ch == 4:
+                print('')
+                print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+            else:
+                print('')
+                print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+        case 3:
+            print('=====================================================')
+            print('==      TEMOS ESSES MODELOS DE SUVS                ==')
+            print('==[1] para MINIVAN:                                ==')
+            print('==[2] para SUV COMPACTO:                           ==')
+            print('==[3] para SUV GRANDE:                             ==')
+            print('==[4] para ENCERRAR PROGRAMA:                      ==')
+            print('=====================================================')
+            ch = int(input('ESCOLHA O MODELO DE SUVS QUE DESEJA:'))
+
             print('')
-            print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+            if ch == 1 or ch == 2 or ch == 3:
+                print('')
+                match ch:
+                    case 1:
+
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA SUVS MINIVAN        ==')
+                        print('== ALUGUEL POR KM RODADO:        R$ 4,00 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:  R$ 2.000,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO      R$ 4.000,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO MINIVANS DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==     TEMOS ESSES MODELOS DE MINIVAN DISPONIVEIS:      ==')
+                        print('==[1] para CHEVROLET SPIN 2023:    R$132.950,00       ==')
+                        print('==[2] para CHEVROLET BOLT 2023:    R$329.000,00       ==')
+                        print('==[3] para KIA CARNIVAL 2023:      R$554.990,00       ==')
+                        print('==[4] para ENCERRAR PROGRAMA                          ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE MINIVANS DISPONIVEIS:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 4.00
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 132950
+                                    nc = 'CHEVROLET SPIN 2023'
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET SPIN 2023:')
+                                    print('')
+
+                                case 2:
+                                    vlc = 329000
+                                    nc = 'CHEVROLET BOLT 2023'
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET BOLT 2023:')
+                                    print('')
+
+                                case 3:
+                                    vlc = 554990
+                                    nc = 'KIA CARNIVAL 2023'
+                                    print('VOCE ESCOLHEU O MODELO KIA CARNIVAL 2023:')
+                                    print('')
 
 
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+                    case 2:
+                        print('\033[0:32m========================================================')
+                        print('==      VALORES DOS CONTRATO PARA SUVS MÉDIAS         ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 3,50 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.750,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 3.500,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO SUVS DISPONIVEIS.................')
+                        '''time.sleep(3)'''
+                        print('==    TEMOS ESSES MODELOS DE SUVS MÉDIAS DISPONIVEIS     ==')
+                        print('==[1] para FIAT PULSE DRIVE 2019:           R$98.990,00  ==')
+                        print('==[2] para RENAULT DUSTER INTENSE 2020:     R$110.790,00 ==')
+                        print('==[3] para CAOA CHERY TIGGO 5X PRO 2019:    R$159.990,00 ==')
+                        print('==[4] para ENCERRAR PROGRAMA:                            ==')
+                        print('===========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SUVS MÉDIAS DISPONIVEIS:'))
 
-    case 2:
-        print('=====================================================')
-        print('==        TEMOS ESSES MODELOS DE PICAPE            ==')
-        print('==[1] para COMPACTA:                               ==')
-        print('==[2] para MÉDIA:                                  ==')
-        print('==[3] para GRANDE:                                 ==')
-        print('==[4] para ENCERRAR PROGRAMA:                      ==')
-        print('=====================================================')
-        ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 3.50
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 98990
+                                    nc = ('FIAT PULSE DRIVE 2019')
+                                    print('VOCE ESCOLHEU O MODELO FIAT PULSE DRIVE 2019:')
+                                    print('')
 
-        print('')
+                                case 2:
+                                    vlc = 110790
+                                    nc = ('RENAULT DUSTER INTENSE 2020')
+                                    print('VOCE ESCOLHEU O MODELO RENAULT DUSTER INTENSE 2020')
+                                    print('')
 
-        if ch == 1 or ch == 2 or ch ==3:
-            print('')
-            match ch:
-                case 1:
-                    print('\033[0:32m========================================================')
-                    print('==   VALORES DOS CONTRATO PARA PICAPES COMPACTAS      ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 2,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.250,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 2.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==TEMOS ESSES MODELOS DE PICAPES COMPACTAS DISPONIVEIS==')
-                    print('==[1] para FIAT TORO 2018:           R$120.544,00     ==')
-                    print('==[2] para VOLKSWAGEN SAVEIRO 2022:  R$105.009,00     ==')
-                    print('==[3] para CHEVROLET MONTANNA 2021:  R$78.771,00      ==')
-                    print('==[4] para ENCERRAR PROGRAMA                          ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE PICAPES COMPACTAS DISPONIVEIS'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 2.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 120544
-                                print('VOCE ESCOLHEU O MODELO FIAT TORO 2018:')
-                                print('')
-
-                            case 2:
-                                vlc = 105009
-                                print('VOCE ESCOLHEU O MODELO VOLKSWAGEN SAVEIRO 2022:')
-                                print('')
-
-                            case 3:
-                                vlc = 78771
-                                print('VOCE ESCOLHEU O MODELO CHEVROLET MONTANNA 2021:')
-                                print('')
+                                case 3:
+                                    vlc = 159990
+                                    nc = ('CAOA CHERY TIGGO 5X PRO 2019')
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO CAOA CHERY TIGGO 5X PRO 2019:')
 
 
-                    elif cp == 4:
+                        elif cp == 4:
+                            print('')
+                            f = 10
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+                    case 3:
+                        print('\033[0:32m========================================================')
+                        print('==     VALORES DOS CONTRATO PARA SUVS GRANDES         ==')
+                        print('== ALUGUEL POR KM RODADO:         R$ 6,00 POR KM      ==')
+                        print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 3.000,00 POR MES ==')
+                        print('== ALUGUEL POR KM ILIMITADO       R$ 6.000,00         ==')
+                        print('========================================================\033[m')
+                        print('BUSCANDO SUVS GRANDES DISPONIVEIS.................')
+                        time.sleep(3)
+                        print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:   ==')
+                        print('==[1] para CHEVROLET TRAILBLAZER 2022:  R$308.290,00 ==')
+                        print('==[2] para TOYOTO HILLUX SW4 2022:      R$409.990,00 ==')
+                        print('==[3] para AUDI Q7 2022:                R$559.745,00 ==')
+                        print('==[4] para ENCERRAR O PROGRAMA:                      ==')
+                        print('========================================================')
+                        cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SUVS GRANDES DISPONIVEIS:'))
+                        if cp == 1 or cp == 2 or cp == 3:
+                            km = 6.00
+                            f = 1
+                            match cp:
+                                case 1:
+                                    vlc = 308290
+                                    nc = 'CHEVROLET TRAILBLAZER 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO CHEVROLET TRAILBLAZER 2022: ')
+
+                                case 2:
+                                    vlc = 409990
+                                    nc = 'TOYOTO HILLUX SW4 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO TOYOTO HILLUX SW4 2022:')
+
+                                case 3:
+                                    vlc = 559745
+                                    nc = 'AUDI Q7 2022'
+                                    print('')
+                                    print('VOCE ESCOLHEU O MODELO AUDI Q7 2022:')
+
+
+                        elif cp == 4:
+                            f = 10
+                            print('')
+                            print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+                        else:
+                            print('')
+                            print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+
+            elif ch == 4:
+                print('')
+                print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
+
+            else:
+                print('')
+                print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+        case 4:
+            print('\033[0:32m========================================================')
+            print('==     VALORES DOS CONTRATO PARA VANS         ==')
+            print('== ALUGUEL POR KM RODADO:         R$ 3,50 POR KM      ==')
+            print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.750,00 POR MES ==')
+            print('== ALUGUEL POR KM ILIMITADO       R$ 3.500,00         ==')
+            print('========================================================\033[m')
+            print('BUSCANDO CARROS DISPONIVEIS.................')
+            time.sleep(3)
+            print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:   ==')
+            print('==[1] para VAN DE 15 LUGARES 2020:      R$100.000,00 ==')
+            print('==[2] para VAN DE 20 LUGARES 2020:      R$150.000,00 ==')
+            print('==[3] para VAN DE 35 LUGARES 2020:      R$250.000,00 ==')
+            print('==[4] para ENCERRAR O PROGRAMA:                      ==')
+            print('========================================================')
+            cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SEDANS DISPONIVEIS:'))
+            if cp == 1 or cp == 2 or cp == 3:
+                km = 3.50
+                f = 1
+                match cp:
+                    case 1:
+                        vlc = 100000
+                        nc = 'VAN DE 15 LUGARES'
                         print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
+                        print('VOCE ESCOLHEU O MODELO VAN DE 15 LUGARES: ')
+
+                    case 2:
+                        vlc = 150000
+                        nc = 'VAN DE 20 LUGARES'
                         print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+                        print('VOCE ESCOLHEU O MODELO VAN DE 20 LUGARES:')
 
-                case 2:
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA PICAPES MÉDIAS       ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 4,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 2.250,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 4.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('== TEMOS ESSES MODELOS DE PICAPES MÉDIAS DISPONIVEIS: ==')
-                    print('==[1] para TOYOTA HILLUX 2021:       R$260.151,00     ==')
-                    print('==[2] para VOLKSWAGEN AMAROK 2020:   R$225.412,00     ==')
-                    print('==[3] para CHEVROLET S10 2022:       R$255.165,00     ==')
-                    print('==[4] para ENCERRAR PROGRAMA:                         ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE PICAPES MÉDIAS DISPONIVEIS '))
-
-
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 4.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 260151
-                                print('VOCE ESCOLHEU O MODELO TOYOTA HILLUX 2021:')
-                                print('')
-
-                            case 2:
-                                vlc = 225412
-                                print('VOCE ESCOLHEU O MODELO VOLKSWAGEN AMAROK 2020:')
-                                print('')
-
-                            case 3:
-                                vlc = 255165
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO CHEVROLET S10 2022:')
-
-
-                    elif cp == 4:
+                    case 3:
+                        vlc = 250000
+                        nc = 'VAN DE 35 LUGARES'
                         print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-
-                case 3:
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA PICAPES GRANDES      ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 6,00 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 3.000,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 6.000,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==TEMOS ESSES MODELOS DE PICAPES GRANDES DISPONIVEIS: ==')
-                    print('==[1] para DODGE RAM 2500 2022:       R$469.784,00    ==')
-                    print('==[2] para CHEVROLET SILVERADO 2022:  R$545.766,00    ==')
-                    print('==[3] para FORD F-150 2022:           R$440.000,00    ==')
-                    print('==[4] para ENCERRAR O PROGRAMA:                       ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE PICAPES GRANDES DISPONIVEIS:'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 6
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 469784
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO DODGE RAM 2022: ')
-
-                            case 2:
-                                vlc = 545766
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO CHEVROLET SILVERADO 2022:')
-
-                            case 3:
-                                vlc = 440000
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO FORD F-150 2022:')
+                        print('VOCE ESCOLHEU O MODELO VAN DE 35 LUGARES:')
 
 
-                    elif cp == 4:
-                        f = 10
-                        print('')
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
+            elif cp == 4:
+                f =    10
+                print('')
+                print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
 
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+            else:
+                print('')
+                print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
 
-        elif ch == 4:
-            print('')
-            print('ALUGUEL CANCELADO!!!!!!!!!!')
-
-        else:
-            print('')
-            print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-    
-
-    case 3:
-        print('=====================================================')
-        print('==        TEMOS ESSES MODELOS DE CARRO             ==')
-        print('==[1] para HATCH:                                  ==')
-        print('==[2] para HATCH ESPORTIVO:                        ==')
-        print('==[3] para SEDAN:                                  ==')
-        print('==[4] para ENCERRAR PROGRAMA:                      ==')
-        print('=====================================================')
-        ch = int(input('ESCOLHA O MODELO DE CARRO QUE DESEJA:'))
-
-        print('')
-
-        if ch == 1 or ch == 2 or ch == 3:
-            print('')
-            match ch:
-                case 1:
-
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA CARROS HATCH         ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 2,00 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.000,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 2.000,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==     TEMOS ESSES MODELOS DE HATCH DISPONIVEIS:      ==')
-                    print('==[1] para POLO 2020:         R$ 64.000,00            ==')
-                    print('==[2] para PRISMA 2019:       R$ 68.000,00            ==')
-                    print('==[3] para FORD KA 2021:      R$ 56.000,00            ==')
-                    print('==[4] para ENCERRAR PROGRAMA                          ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSO MODELOS DE HATCH DISPONIVEIS'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 2.00
-                        f = 1
-                        match cp:
-                            case 1:
-                                vlc = 64000
-                                print('VOCE ESCOLHEU O MODELO POLO 2020:')
-                                print('')
-
-                            case 2: 
-                                vlc = 68000
-                                print('VOCE ESCOLHEU O MODELO PRISMA 2019:')
-                                print('')
-
-                            case 3:
-                                vlc = 56000
-                                print('VOCE ESCOLHEU O MODELO FORD KA 2020:')
-                                print('')
-
-
-                    elif cp == 4:
-                        print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-                case 2:
-                    print('\033[0:32m========================================================')
-                    print('==  VALORES DOS CONTRATO PARA CARROS HATCH ESPORTIVO  ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 2,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.250,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 2.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('== TEMOS ESSES MODELOS DE HATCH ESPORTIVO DISPONIVEIS:==')
-                    print('==[1] para FORD FOCUS 2022:            R$115.649,00   ==')
-                    print('==[2] para HONDA CIVIC SI 2020:        R$179.900,00   ==')
-                    print('==[3] para VOLKSWAGEN GOLF GTI 2019:   R$137.249,00   ==')
-                    print('==[4] para ENCERRAR PROGRAMA:                         ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE HATCH ESPORTIVO DISPONIVEIS '))
-
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 2.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                print('VOCE ESCOLHEU O MODELO FORD FOCUS 2022:')
-                                print('')
-
-                            case 2:
-                                print('VOCE ESCOLHEU O MODELO HONDA CIVIC SI 2020:')
-                                print('')
-
-                            case 3:
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO VOLKSWAGEN GOLF GTI 2019:')
-
-
-                    elif cp == 4:
-                        print('')
-                        f = 10
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-
-                case 3:
-                    print('\033[0:32m========================================================')
-                    print('==     VALORES DOS CONTRATO PARA CARROS SEDANS        ==')
-                    print('== ALUGUEL POR KM RODADO:         R$ 3,50 POR KM      ==')
-                    print('== ALUGUEL MENSAL COM KM LIVRE:   R$ 1.750,00 POR MES ==')
-                    print('== ALUGUEL POR KM ILIMITADO       R$ 3.500,00         ==')
-                    print('========================================================\033[m')
-                    print('BUSCANDO CARROS DISPONIVEIS.................')
-                    time.sleep(3)
-                    print('==      TEMOS ESSES MODELOS DE SEDANS DISPONIVEIS:    ==')
-                    print('==[1] para HONDA CIVIC 2022:       R$182.901,00       ==')
-                    print('==[2] para BMW 220I 2019:          R$239.950,00       ==')
-                    print('==[3] para MERCEDES C180 2020:     R$209.049,00       ==')
-                    print('==[4] para ENCERRAR O PROGRAMA:                       ==')
-                    print('========================================================')
-                    cp = int(input('ESCOLHA UM DOS NOSSOS MODELOS DE SEDANS DISPONIVEIS:'))
-                    if cp == 1 or cp == 2 or cp == 3:
-                        km = 3.50
-                        f = 1
-                        match cp:
-                            case 1:
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO HONDA CIVIC 2022: ')
-
-                            case 2:
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO BMW 220I 2019:')
-
-                            case 3:
-                                print('')
-                                print('VOCE ESCOLHEU O MODELO MERCEDEZ C180 2020:')
-
-
-                    elif cp == 4:
-                        f = 10
-                        print('')
-                        print('ALUGUEL CANCELADO!!!!!!!!!!')
-
-                    else:
-                        print('')
-                        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-
-        elif ch == 4:
-            print('')
-            print('ALUGUEL CANCELADO!!!!!!!!!!')
-
-        else:
-            print('')
-            print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+else:
+    print('\33[0:31mPROGRAMA ENCERRADO')
 print(' ')
 if f == 10:
     print('=' * 30)
@@ -554,74 +602,90 @@ elif f == 1:
         match contrato:
             case 1:
                 print('')
-                print('VOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?\n O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
-                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,\n CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO ')
+                print('\33[0:31mVOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?')
+                print('n O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
+                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,')
+                print('CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO \33[m')
                 print('==[1] para QUERO TER O SEGURO==')
                 print('==[2] para NAO QUERO O SEGURO==')
+                print('== QUAL QUER VALOR PARA CANCELAR O ALUGUEL==')
                 taxa = int(input('=QUER TER O SEGURO?='))
                 print('')
                 if taxa == 1:
                     tot = (1 * vlc) / 100
-                    
-                    print('O ALUGUEL DO(a) {} É R${} POR KM RODADO Á TAXA COM SEGURO SERÁ DE R${}'.format(nc,km,tot))
 
-                elif taxa == 2 :
-                    print('O ALUGUEL DO(a) {} É DE R${} POR KM'.format(nc,km))
+                    print('O ALUGUEL DO {} É R${} POR KM RODADO Á TAXA COM SEGURO SERÁ DE R${}'.format(nc, km, tot))
+
+                elif taxa == 2:
+                    print('O ALUGUEL DO {} É DE R${} POR KM'.format(nc, km))
+
+                else:
+                    print('\33[0:31mALUGUEL CANCELADO>>>>>>>>>>>>')
 
             case 2:
                 m = int(input('QUANTOS MESES VAI FICAR COM O CARRO ?'))
                 t = m * 500
+                mes = km * 500
+                total = t + mes
                 print('')
-                print('VOCE ESCOLHEU ALUGUEL MENSAL! O VALOR É R${} POR MES'.format(km*500))
-                print('O VALOR TOTAL A PAGAR VAI SER DE R${} POR {} MES(es)'.format(t, m))
+                print('VOCE ESCOLHEU ALUGUEL MENSAL! O VALOR É R${} POR MES'.format(km * 500))
+                print('O VALOR TOTAL A PAGAR VAI SER DE R${} POR {} MES(es)'.format(total, m))
                 print('')
-                print('VOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?\n O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
-                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,\n CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO ')
+                print('\33[0:31mVOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?\n O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
+                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,')
+                print('CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO \033[m')
                 print('==[1] para QUERO TER O SEGURO==')
                 print('==[2] para NAO QUERO O SEGURO==')
+                print('== QUAL QUER VALOR PARA CANCELAR O ALUGUEL==')
                 taxa = int(input('=QUER TER O SEGURO?='))
                 print('')
                 if taxa == 1:
                     tot = (1 * vlc) / 100
                     print('A TAXA É DE R${:.2f} '.format(tot))
-                    print('O ALUGUEl DO(a) {} SERÁ DE R$x  {}'.format(nc,t + tot))
+                    print('O ALUGUEl DO {} SERÁ DE R${}'.format(nc, total + tot))
 
                 elif taxa == 2:
-                    tot = (25* t) / 100
-                    print('O ALUGUEL DO(a) {} É DE R${} SOMANDO COM A TAXA DE SEM SEGURO QUE É DE R${}.'.format(nc,t + tot, tot))
+                    tot = (25 * t) / 100
+                    print('O ALUGUEL DO {} É DE R${} SOMANDO COM A TAXA DE SEM SEGURO QUE É DE R${}.'.format(nc, total + tot, tot))
 
-
+                else:
+                    print('\33[0:31mALUGUEL CANCELADO>>>>>>>>>>>>')
 
             case 3:
                 print('')
                 t = km * 1000
                 print('VOCE ESCOLHEU ALUGUEL POR KM ILIMITADO! O VALOR É DE R${:.2f}'.format(t))
                 print('')
-                print('VOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?\n O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
-                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,\n CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO ')
+                print('\33[0:31mVOCE DESEJA INCLUIR O SEGURO NO AUTOMOVEL ALUGADO?')
+                print('O VALOR DO SEGURO É DE 1% DO VALOR TOTAL DO VEICULO ')
+                print('CASO NAO QUEIRA INCLUIR O SEGURO TEMOS UMA TAXA DE 25% DO VALOR DO ALUGUEL,')
+                print('CASO ACONTEÇA UM ACIDENTE VOCE TERA QUE ARCAR COM OS CUSTOS DO VEICULO \33[m')
                 print('==[1] para QUERO TER O SEGURO==')
                 print('==[2] para NAO QUERO O SEGURO==')
+                print('== QUAL QUER VALOR PARA CANCELAR O ALUGUEL==')
                 taxa = int(input('=QUER TER O SEGURO?='))
                 print('')
                 if taxa == 1:
                     tot = (1 * vlc) / 100
                     print('A TAXA É DE R${:.2f} '.format(tot))
-                    print('O ALUGUEl DO(a) {} SERÁ DE R${}'.format(nc, t + tot))
+                    print('O ALUGUEl DO {} SERÁ DE R${}'.format(nc, t + tot))
 
                 elif taxa == 2:
-                    tot = (25* t) / 100
-                    print('O ALUGUEL DO(a) {} É DE R${}\n SOMANDO COM A TAXA DE SEM SEGURO QUE É DE R${}.'.format(nc,t + tot, tot))
+                    tot = (25 * t) / 100
+                    print('A TAXA DO ALUGUEL DO {} É R${} SOMANDO COM A TAXA DE SEM SEGURO QUE É DE R${}.'.format(nc, tot,t + tot))
+                else:
+                    print('\33[0:31mALUGUEL CANCELADO>>>>>>>>>>>>')
 
             case 4:
-                print('ALUGUEL CANCELADO!!!!!!!')
-        
+                print('\33[0:31mALUGUEL CANCELADO!!!!!!!')
+
 
 
 
 
     elif contrato == 4:
-        print('ALUGUEL CANCELADO!!!!!!!!!!')
+        print('\33[0:31mALUGUEL CANCELADO!!!!!!!!!!')
 
     else:
-        print('VALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
+        print('\33[0:31mVALOR NAO CORRESPONDENTE>>> PROGRAMA ENCERRADO.')
         
